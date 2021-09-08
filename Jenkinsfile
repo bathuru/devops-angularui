@@ -38,6 +38,7 @@ pipeline {
                           sh "docker push bathurudocker/devops-springbootrest:${VER_NUM}" 
                           sh "docker rmi bathurudocker/devops-springbootrest" 
                  } 
+          }
 
      stage('Deploy Into DEV') {
        steps {   
