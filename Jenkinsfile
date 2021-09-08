@@ -62,7 +62,7 @@ pipeline {
              )
          }
             }*/
-
+/*
      stage ('SonarQube Analysis') {
         steps {
               withSonarQubeEnv('sonar_server') {
@@ -71,7 +71,7 @@ pipeline {
               }
             }
       }    
- 
+ */
           stage('Docker Build & Push') {    
                   steps {
                           script{        // To add Scripted Pipeline sentences into a Declarative
