@@ -12,7 +12,7 @@ RUN npm install -g npm@7.22.0
 COPY . /app
 
 # generate build RUN npm run build --prod
-RUN ng build
+RUN ng build --prod
 
 # base image
 FROM nginx:alpine
