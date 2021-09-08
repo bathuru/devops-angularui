@@ -24,19 +24,19 @@ pipeline {
                           script{        // To add Scripted Pipeline sentences into a Declarative
                                     try{
                                             sh "echo pwd"
-                                             //sh "docker rm -f devops-springbootrest || true"
-                                             //sh "docker rmi bathurudocker/devops-springbootrest || true"       //sh 'docker rmi $(docker images bathurudocker/devops-springbootrest)''
+                                             //sh "docker rm -f devops-devops-angularui || true"
+                                             //sh "docker rmi bathurudocker/devops-devops-angularui || true"       //sh 'docker rmi $(docker images bathurudocker/devops-devops-angularui)''
                                           }catch(error){
                                           //  do nothing if there is an exception
                                           }
                             }
-                          sh "docker build -t bathurudocker/devops-springbootrest:${VER_NUM} ."
-                          sh "docker image tag bathurudocker/devops-springbootrest:${VER_NUM}  bathurudocker/devops-springbootrest:latest"
+                          sh "docker build -t bathurudocker/devops-angularui:${VER_NUM} ."
+                          sh "docker image tag bathurudocker/devops-angularui:${VER_NUM}  bathurudocker/devops-angularui:latest"
                           withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
                                  sh "docker login -u bathurudocker -p ${dockerpwd}"
                          }
-                          sh "docker push bathurudocker/devops-springbootrest:${VER_NUM}" 
-                          sh "docker rmi bathurudocker/devops-springbootrest" 
+                          sh "docker push bathurudocker/devops-angularui:${VER_NUM}" 
+                          sh "docker rmi bathurudocker/devops-angularui" 
                  } 
           }
 
@@ -44,8 +44,8 @@ pipeline {
        steps {   
            sh "pwd"
            sshagent(['aws-ap-south-pem']) {
-               sh "ssh -o StrictHostKeyChecking=no ec2-user@docker.bathur.xyz  sudo docker rm -f devops-springbootrest || true"
-               sh "ssh -o StrictHostKeyChecking=no ec2-user@docker.bathur.xyz  sudo docker run  -d -p 8010:8080 --name devops-springbootrest bathurudocker/devops-springbootrest:${VER_NUM}"
+               sh "ssh -o StrictHostKeyChecking=no ec2-user@docker.bathur.xyz  sudo docker rm -f devops-angularui || true"
+               sh "ssh -o StrictHostKeyChecking=no ec2-user@docker.bathur.xyz  sudo docker run  -d -p 8010:8080 --name devops-angularui bathurudocker/devops-angularui:${VER_NUM}"
           }
        }
      }     
