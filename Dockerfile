@@ -1,5 +1,5 @@
 # base image
-FROM node:latest as build-stage 
+FROM node:14.17 as build-stage 
 
 # set working directory
 WORKDIR /app
