@@ -6,7 +6,7 @@ WORKDIR /app
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-RUN npm install -g npm@7.22.0
+RUN npm install
 
 # add app
 COPY . /app
