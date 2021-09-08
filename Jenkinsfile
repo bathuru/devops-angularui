@@ -55,3 +55,4 @@ pipeline {
                 echo 'Pipeline Sucessfully Finished'
     }
     }
+}
