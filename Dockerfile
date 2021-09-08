@@ -1,12 +1,12 @@
 # base image
-FROM node:14.17 as build-stage 
+FROM node:alpine3.10 as build-stage 
 
 # set working directory
 WORKDIR /app
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-RUN npm install @angular/cli
+# RUN npm install @angular/cli
 RUN npm install
 
 # add app
