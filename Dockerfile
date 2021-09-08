@@ -7,7 +7,7 @@ WORKDIR /app
 # install and cache app dependencies
 COPY package.json /app/package.json
 # RUN npm install @angular/cli
-RUN npm install --prod
+RUN npm install
 
 # add app
 COPY . /app
