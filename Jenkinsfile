@@ -30,11 +30,12 @@ pipeline {
                                           //  do nothing if there is an exception
                                           }
                             }
-                          sh "docker build -t bathurudocker/devops-angularui:${VER_NUM} ."
-                          sh "docker image tag bathurudocker/devops-angularui:${VER_NUM}  bathurudocker/devops-angularui:latest"
+
                           withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
                                  sh "docker login -u bathurudocker -p ${dockerpwd}"
                          }
+                          sh "docker build -t bathurudocker/devops-angularui:${VER_NUM} ."
+                          sh "docker image tag bathurudocker/devops-angularui:${VER_NUM}  bathurudocker/devops-angularui:latest"
                           sh "docker push bathurudocker/devops-angularui:${VER_NUM}" 
                           sh "docker rmi bathurudocker/devops-angularui" 
                  } 
