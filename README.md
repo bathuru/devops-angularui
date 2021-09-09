@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Run ng build' to build the project. The build artifacts will be stored in the 'dist/' directory. Use the --prod flag for a production build.
 
 ##RUN nmp install npm start http://localhost:4200/employees
+
+## Manual Steps
+/Users/srinivas/devops/git/devops-angularui
+docker build -t bathurudocker/devops-angularui:2 . 
+docker run -p 80:80 --name srini2 bathurudocker/devops-angularui:1234
