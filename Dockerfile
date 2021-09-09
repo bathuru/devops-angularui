@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN npm install -g npm@10.0.5
 RUN npm run build --prod
 
 CMD ["npm", "start"]
