@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular9-springboot-client": {
+    "angular8-crud-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/EmployeeAngular",
+            "outputPath": "dist/angular8-crud-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,10 +23,17 @@
               "src/favicon.ico",
               "src/assets"
             ],
+           
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css" ,
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css" 
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -62,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular9-springboot-client:build"
+            "browserTarget": "angular8-crud-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular9-springboot-client:build:production"
+              "browserTarget": "angular8-crud-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular9-springboot-client:build"
+            "browserTarget": "angular8-crud-demo:build"
           }
         },
         "test": {
@@ -110,15 +117,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular9-springboot-client:serve"
+            "devServerTarget": "angular8-crud-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular9-springboot-client:serve:production"
+              "devServerTarget": "angular8-crud-demo:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "angular9-springboot-client"
+    }
+  },
+  "defaultProject": "angular8-crud-demo",
+  "cli": {
+    "analytics": "83e87c7a-b222-4978-be6e-c44059c08f28"
+  }
 }

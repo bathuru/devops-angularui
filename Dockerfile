@@ -1,28 +1,18 @@
-# base image
-FROM node:12.9.1 as build
+FROM node:latest as builder
 
-# set working directory
+RUN mkdir -p /app
+
 WORKDIR /app
 
-# install and cache app dependencies
-COPY package.json  /app/package.json
-# RUN npm install @angular/cli
-RUN npm install -g npm
+COPY . .
 
-# add app
-COPY . /app
-
-# generate build RUN npm run build --prod
+RUN npm install
 RUN npm run build --prod
 
-# base image
+CMD ["npm", "start"]
+
 FROM nginx:alpine
+COPY src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
+COPY --from=builder app/dist/angular8-crud-demo usr/share/nginx/html
 
-# copy artifact build from the 'build environment'
-COPY --from=build-stage /app/dist/EmployeeAngular /usr/share/nginx/html
 
-# expose port 80
-EXPOSE 80
-
-# run nginx
-CMD ["nginx", "-g", "daemon off;"]
