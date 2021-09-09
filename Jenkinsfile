@@ -46,7 +46,7 @@ pipeline {
            sh "pwd"
            sshagent(['aws-ap-south-pem']) {
                sh "ssh -o StrictHostKeyChecking=no ec2-user@docker.bathur.xyz  sudo docker rm -f devops-angularui || true"
-               sh "ssh -o StrictHostKeyChecking=no ec2-user@docker.bathur.xyz  sudo docker run  -d -p 8010:8080 --name devops-angularui bathurudocker/devops-angularui:${VER_NUM}"
+               sh "ssh -o StrictHostKeyChecking=no ec2-user@docker.bathur.xyz  sudo docker run  -d -p 80:80 --name devops-angularui bathurudocker/devops-angularui:${VER_NUM}"
           }
        }
      }     
