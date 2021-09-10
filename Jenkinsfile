@@ -38,10 +38,10 @@ pipeline {
                           //sh "docker image tag bathurudocker/devops-angularui:${VER_NUM}  bathurudocker/devops-angularui:latest"
                           //sh "docker push bathurudocker/devops-angularui:${VER_NUM}" 
                          sh "pwd"
-                         sh "docker build -t bathurudocker/devops-angularui:latest ."
+                         //sh "docker build -t bathurudocker/devops-angularui:latest ."
                           //sh "docker image tag bathurudocker/devops-angularui:latest  bathurudocker/devops-angularui:latest"
-                          sh "docker push bathurudocker/devops-angularui:latest" 
-                          sh "docker rmi bathurudocker/devops-angularui" 
+                          //sh "docker push bathurudocker/devops-angularui:latest" 
+                          //sh "docker rmi bathurudocker/devops-angularui" 
                  } 
           }
 
