@@ -23,7 +23,7 @@ pipeline {
                   steps {
                           script{        // To add Scripted Pipeline sentences into a Declarative
                                     try{
-                                            sh "echo pwd"
+                                            sh "pwd"
                                              //sh "docker rm -f devops-devops-angularui || true"
                                              //sh "docker rmi bathurudocker/devops-devops-angularui || true"       //sh 'docker rmi $(docker images bathurudocker/devops-devops-angularui)''
                                           }catch(error){
@@ -37,12 +37,12 @@ pipeline {
                           //sh "docker build -t bathurudocker/devops-angularui:${VER_NUM} ."
                           //sh "docker image tag bathurudocker/devops-angularui:${VER_NUM}  bathurudocker/devops-angularui:latest"
                           //sh "docker push bathurudocker/devops-angularui:${VER_NUM}" 
+                         sh "pwd"
+                         //sh "docker build -t bathurudocker/devops-angularui:latest ."
+                          //sh "docker image tag bathurudocker/devops-angularui:latest  bathurudocker/devops-angularui:latest"
+                          //sh "docker push bathurudocker/devops-angularui:latest" 
 
-                         sh "docker build -t bathurudocker/devops-angularui:latest ."
-                          sh "docker image tag bathurudocker/devops-angularui:latest  bathurudocker/devops-angularui:latest"
-                          sh "docker push bathurudocker/devops-angularui:latest" 
-
-                          sh "docker rmi bathurudocker/devops-angularui" 
+                          //sh "docker rmi bathurudocker/devops-angularui" 
                  } 
           }
 
