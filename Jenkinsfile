@@ -34,9 +34,14 @@ pipeline {
                           withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
                                  sh "docker login -u bathurudocker -p ${dockerpwd}"
                          }
-                          sh "docker build -t bathurudocker/devops-angularui:${VER_NUM} ."
-                          sh "docker image tag bathurudocker/devops-angularui:${VER_NUM}  bathurudocker/devops-angularui:latest"
-                          sh "docker push bathurudocker/devops-angularui:${VER_NUM}" 
+                          //sh "docker build -t bathurudocker/devops-angularui:${VER_NUM} ."
+                          //sh "docker image tag bathurudocker/devops-angularui:${VER_NUM}  bathurudocker/devops-angularui:latest"
+                          //sh "docker push bathurudocker/devops-angularui:${VER_NUM}" 
+
+                         sh "docker build -t bathurudocker/devops-angularui:latest ."
+                          sh "docker image tag bathurudocker/devops-angularui:latest  bathurudocker/devops-angularui:latest"
+                          sh "docker push bathurudocker/devops-angularui:latest" 
+
                           sh "docker rmi bathurudocker/devops-angularui" 
                  } 
           }
