@@ -35,7 +35,8 @@ Run ng build' to build the project. The build artifacts will be stored in the 'd
 
 ## Manual Steps
 /Users/srinivas/devops/git/devops-angularui
-docker build -t bathurudocker/devops-angularui:2 . 
+docker build -t bathurudocker/devops-angularui:latest .
+docker push bathurudocker/devops-angularui:latest 
 docker run -p 80:80 --name srini2 bathurudocker/devops-angularui:1234
 
 
