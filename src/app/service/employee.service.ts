@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from "rxjs/index";
+import { Observable } from "rxjs/index";
 import { ApiResponse } from '../model/api.response';
 import { Employee } from '../model/employee.model';
 import { environment } from 'src/environments/environment';
@@ -9,11 +9,11 @@ import { environment } from 'src/environments/environment';
 export class EmployeeService {
 
   constructor(private http: HttpClient) { }
-  private baseUrl: string = environment.baseUrl+'/api/employees/';
+  private baseUrl: string = environment.baseUrl + '/api/employees/';
 
-  
 
-  getEmployees() : Observable<ApiResponse> {
+
+  getEmployees(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl);
   }
 
