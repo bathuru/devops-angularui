@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://springbootrest-sv:80'
+  baseUrl: 'http://springbootrest.bathur.xyz:80'
   //baseUrl: 'http://192.168.64.4:30163'
 
 };
